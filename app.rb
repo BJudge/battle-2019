@@ -21,6 +21,7 @@ class Battle < Sinatra::Base
     @current_turn = @game.current_turn.name
     @player_1_name = @game.player_1.name
     @player_2_name = @game.player_2.name
+    @player_1_hit_points = @game.player_1.hit_points
     @player_2_hit_points = @game.player_2.hit_points
     erb :play
   end
