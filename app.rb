@@ -18,6 +18,7 @@ class Battle < Sinatra::Base
 
   get '/play' do
     @game = $game
+    @current_turn = @game.current_turn.name
     @player_1_name = @game.player_1.name
     @player_2_name = @game.player_2.name
     @player_2_hit_points = @game.player_2.hit_points
@@ -29,6 +30,7 @@ class Battle < Sinatra::Base
     @player_1_name = @game.player_1.name
     @player_2_name = @game.player_2.name
     @player_1_attack = @game.attack(@game.player_2)
+    @game.switch_turns
     erb :attack
   end
 
