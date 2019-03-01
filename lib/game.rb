@@ -22,8 +22,6 @@ attr_reader :players, :current_turn
     @current_turn = switch_player(current_turn)
   end
 
-  private
-
   def switch_player(the_player)
     @players.select { |player| player != the_player }.first
   end
